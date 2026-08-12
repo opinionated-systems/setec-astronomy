@@ -1,0 +1,4 @@
+# Dev tooling only: the formatter and the git hook runner that enforces it.
+# Nothing here is needed to run the scrubber or the stego demo.
+black>=26.0
+pre-commit>=4.0

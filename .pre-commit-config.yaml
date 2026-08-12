@@ -1,0 +1,10 @@
+# Formatting gate for scripts/. Installed by .devcontainer/post_create.sh, which
+# runs `pre-commit install` from .venv so the git hook resolves without an
+# activated virtualenv.
+#
+# Run by hand:  .venv/bin/pre-commit run --all-files
+repos:
+  - repo: https://github.com/psf/black-pre-commit-mirror
+    rev: 26.5.1
+    hooks:
+      - id: black

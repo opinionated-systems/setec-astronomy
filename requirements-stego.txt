@@ -1,0 +1,4 @@
+# Only needed for scripts/stego.py (the token-level steganography demo), which
+# runs a local GPT-2 to embed/extract a channel. The scrubber does NOT need these.
+torch>=2.0
+transformers>=4.40

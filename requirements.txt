@@ -1,0 +1,5 @@
+# Scrubber core (scripts/warden.py, scripts/llm.py) needs NO third-party
+# packages, only the Python standard library. The one optional dependency below
+# just makes the divergence metric more faithful (BPE subword tokens instead of
+# a word/punct split). Safe to skip.
+tiktoken>=0.7.0

@@ -1,0 +1,33 @@
+{
+  "name": "setec-astronomy",
+  "image": "mcr.microsoft.com/devcontainers/python:3-3.14-trixie",
+
+  // --network=host so a host-local Ollama (http://localhost:11434/v1) is
+  // reachable as-is from inside the container (see .env.example).
+  "runArgs": ["--network=host", "--name=setec-astronomy"],
+
+  "postCreateCommand": ".devcontainer/post_create.sh",
+
+  // Passed through from your host environment if set, so your key never has to
+  // live in a file. Alternatively: cp .env.example .env, then inside the
+  // container run `set -a && . ./.env && set +a`.
+  "containerEnv": {
+    "SETEC_BASE_URL": "${localEnv:SETEC_BASE_URL}",
+    "SETEC_API_KEY": "${localEnv:SETEC_API_KEY}",
+    "SETEC_MODEL": "${localEnv:SETEC_MODEL}"
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "anthropic.claude-code",
+        "editorconfig.editorconfig",
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/workspaces/setec-astronomy/.venv/bin/python"
+      }
+    }
+  }
+}
