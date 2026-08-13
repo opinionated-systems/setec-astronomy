@@ -14,8 +14,7 @@ is selected** from among the plausible ones, so the cover text reads as ordinary
 model output. Two requirements underpin decoding in every such scheme:
 
 1. **Determinism.** Both sides must compute bit-identical logits (reference
-   implementations pin CPU + float32 + fixed seed; hosted GPU inference is not
-   bit-reproducible).
+   implementations pin CPU + float32 + fixed seed; hosted GPU inference [is usually nondeterministic, even when the temperature is set to 0](https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/)).
 2. **Tokenization agreement.** The receiver must re-tokenize the cover text to
    the same token ids the sender emitted.
 
